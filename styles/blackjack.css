@@ -1,0 +1,73 @@
+.blackjack.wrapper {
+    background: #799F0C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #aebe70, #799F0C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #aebe70, #799F0C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+hr {
+    width: 60%;
+    height: 5px;
+    background-color: white;
+    border: none;
+    margin: 10px;
+}
+
+.blackjack.container > p {
+    font-size: 2rem;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.blackjack-btn-div {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+}
+
+.blackjack-btn-div > button {
+    margin: 0 20px;
+    width: 17%;
+    font-size: 1.4rem;
+    padding: 20px 0;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 5px solid white;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.blackjack-btn-div > button:hover {
+    border-radius: 20px;
+}
+
+.blackjack.container > h3 {
+    margin: 20px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .blackjack-btn-div > button {
+        font-size: 1rem;
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .blackjack-btn-div > button {
+        font-size: 12px;
+        width: 22%;
+        padding: 14px 0;
+        border: 2px solid white;
+    }
+
+    .blackjack.container > p {
+        font-size: 1.5rem;
+    }
+}

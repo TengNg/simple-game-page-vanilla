@@ -1,0 +1,151 @@
+.ticTacToe.wrapper {
+	background: #FC354C;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, hsl(179, 90%, 45%), hsl(353, 97%, 70%));  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, hsl(179, 90%, 45%), hsl(353, 97%, 70%)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.board {
+	display: grid;
+	place-items: center;
+	height: 300px;
+	width: 300px;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+	margin: 10px 0 40px 10px;
+}
+
+.board div {
+	border: 10px solid rgb(43, 43, 43);
+	height: 100px;
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	position: relative;
+}
+
+.board div:nth-child(1),
+.board div:nth-child(2),
+.board div:nth-child(3) {
+	border-top: none;
+}
+
+.board div:nth-child(1),
+.board div:nth-child(4),
+.board div:nth-child(7) {
+	border-left: none;
+	border-bottom: none;
+}
+
+.board div:nth-child(2),
+.board div:nth-child(5),
+.board div:nth-child(8) {
+	border-left: none;
+	border-bottom: none;
+}
+
+.board div:nth-child(3),
+.board div:nth-child(6),
+.board div:nth-child(9) {
+	border-left: none;
+	border-bottom: none;
+	border-right: none;
+}
+
+ 
+
+/* X_player */
+.cell.x::after, 
+.cell.x::before {
+   content: '';
+   position: absolute;
+   width: 12px;
+   height: 60px;
+   border-radius: 10px;
+   background-color: rgb(56, 56, 161);
+}
+
+.cell.x::after { transform: rotate(45deg); }
+.cell.x::before { transform: rotate(-45deg); }
+
+
+/* O player */
+.cell.o::after, 
+.cell.o::before {
+   content: '';
+   position: absolute;
+   width: 55px;
+   height: 55px;
+   border-radius: 50%;
+   background-color: rgb(151, 29, 29);
+}
+
+.cell.x, 
+.cell.o {
+   cursor: not-allowed;
+}
+
+
+/*check if game finished*/
+.cell.invalid {
+   pointer-events: none;
+}
+
+.reset-btn {
+	border: 3px solid white;
+	color: white;
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding: 15px 45px;
+	background-color: transparent;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.4s ease;
+}
+
+.reset-btn:hover {
+	border-radius: 20px;
+	border-color: rgb(253, 161, 175);
+	color: rgb(253, 161, 175);
+}
+
+.ticTacToe-winning-message {
+	height: 1.5rem;
+	width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.15em;
+	font-weight: bold;
+	color: darkred;
+}
+
+@media screen and (max-width: 768px) {
+    .board {
+		display: grid;
+		place-items: center;
+		height: 270px;
+		width: 270px;
+		grid-template-rows: 90px 90px 90px;
+		grid-template-columns: 90px 90px 90px;
+		margin: 0px 0px 30px 10px;
+	}
+
+	.board div {
+		border: 10px solid rgb(43, 43, 43);
+		height: 90px;
+		width: 90px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		position: relative;
+	}
+
+	.reset-btn {
+		padding: 15px 35px;
+		font-size: 0.8rem;
+	}
+}
+

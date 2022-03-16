@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="styles/blackjack.css">
+   <link rel="stylesheet" href="styles/rollingdices.css">
+   <link rel="stylesheet" href="styles/tictactoe.css">
+   <link rel="stylesheet" href="styles/memorycards.css">
+   <link rel="stylesheet" href="index.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <title>SimpleGamesPage</title>
+</head>
+
+<body>
+
+   <div class="all-container">
+
+      <!-- NAVBAR -->
+      <nav class='navbar'>
+         <div class="navbar-container">
+            <a href="#description" class='navbar-logo'>
+               <i class="far fa-meh-blank"></i>
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+               <span class="bar"></span>
+               <span class="bar"></span>
+               <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+               <li class='navbar-item'>
+                  <a href="#blackjack" id='blackjack-game' class='navbar-link'>Blackjack</a>
+               </li>
+               <li class='navbar-item'>
+                  <a href="#rollingDices" id='rollingDices-game' class='navbar-link'>RollingDices</a>
+               </li>
+               <li class='navbar-item'>
+                  <a href="#ticTacToe" id='ticTacToe-game' class='navbar-link'>TicTacToe</a>
+               </li>
+               <li class='navbar-item'>
+                  <a href="#memoryCards" id='memoryCards-game' class='navbar-link'>MemoryCards</a>
+               </li>
+               <li class='navbar-item'>
+                  <a href="#about" id='about-page' class='navbar-btn'>About</a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+
+
+      <!-- DESCRIPTION -->
+      <div class="description" id='description'>
+         <div class="description-container">
+            <h1 class='description-heading'>Simple games with plain <span>Javascript</span></h1>
+            <a href='#blackjack' class="description-btn"><i class="far fa-arrow-alt-circle-left"></i></a>
+         </div>
+      </div>
+
+
+      <!-- BLACKJACK GAME -->
+      <div class="blackjack" id='blackjack'>
+         <div class="blackjack wrapper">
+            <h1 class='blackjack heading'>Blackjack</h1>
+            <div class="blackjack container d-flex-column">
+               <p>Your cards: <span class='your-cards'>...</span></p>
+               <hr>
+               <p>Your score: <span class='your-score'>...</span></p>
+               <p>CU score: <span class='cu-score'>...</span></p>
+               <h3>Result: <span class="blackjack-winning-message">...</span></h3>
+               <div class="blackjack-btn-div">
+                  <button class='newCard'>New Cards</button>
+                  <button class='drawCard'>Draw Card</button>
+                  <button class='stay'>Stay</button>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+      <!-- ROLLING DICES GAME -->
+      <div class="rollingDices" id="rollingDices">
+         <div class="rollingDices wrapper">
+            <h1 class='rollingDices heading'>Rolling Dices</h1>
+            <div class='rollingDices container'>
+               <p>Click: <span class='click-count'></span></p> <br>
+               <p class='rollingDices-message'>
+                  Keep rolling 'til you find the number <span class='lucky-number'>...</span>
+               </p>
+               <div class="dices-div d-flex-row">
+                  <div class="dice"></div>
+                  <div class="dice"></div>
+                  <div class="dice"></div>
+               </div>
+               <div class='rollingDices-winning-message'></div>
+               <h3 class="total-point">...</h3>
+               <div class="rollingDices-btn-div d-flex-row">
+                  <button class='roll-btn'>ROLL</button>
+                  <button class="new-lucky-number">NEW</button>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+      <!-- TIC TAC TOE GAME -->
+      <div class="ticTacToe" id='ticTacToe'>
+         <div class="ticTacToe wrapper">
+            <h1 class='ticTacToe heading'>Tic Tac Toe</h1>
+            <div class="ticTacToe container d-flex-column">
+               <div class="ticTacToe-winning-message"></div>
+               <div class="board" id='board'>
+                  <div class='cell'></div>
+                  <div class='cell'></div>
+                  <div class='cell'></div>
+                  <div class='cell'></div>
+                  <div class='cell'></div>
+                  <div class='cell'></div>
+                  <div class='cell'></div>
+                  <div class='cell'></div>
+                  <div class='cell'></div>
+               </div>
+               <button class='reset-btn'>Reset</button>
+            </div>
+         </div>
+      </div>
+
+
+      <!-- MEMORY CARDS GAME -->
+      <div class="memoryCards" id='memoryCards'>
+         <div class="memoryCards wrapper">
+            <h2 class="memoryCards heading">Memory Cards</h2>
+            <h3 style='text-align:center'>Lives: <span class='player-lives-count' class='player-lives-count'></span>
+            </h3>
+            <div class="memoryCards container"></div>
+            <h3 style='text-align:center' class="memoryCards-winning-message"></h3>
+         </div>
+      </div>
+
+      <!-- ABOUT -->
+      <div class="about" id="about">
+         <div class="about-container">
+            <a href="#blackjack" class='about-heading'><i class="fas fa-rocket"></i></a>
+            <div class="paragraph d-flex-column">
+               <p>Lorem ipsum dolor sit amet.</p>
+               <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="button-div d-flex-row">
+               <button onclick=" window.open('https://github.com/TengNg/SimpleGamesPage','_blank')" class='my-github'>
+                  Code <i class="fas fa-code"></i>
+               </button>
+               <button onclick=" window.open('http:/github.com/TengNg','_blank')" class='my-github'>
+                  MyGithub <i class="fab fa-github"></i>
+               </button>
+            </div>
+         </div>
+      </div>
+
+   </div>
+
+   <div class="progress-bar"></div>
+
+
+   <!-- Games script -->
+   <script src='app.js'></script>
+   <script src="games/Blackjack.js"></script>
+   <script src="games/RollingDices.js"></script>
+   <script src="games/MemoryCards.js"></script>
+   <script src="games/TicTacToe.js"></script>
+   <script src='progress-bar.js'></script>
+</body>
+
+</html>

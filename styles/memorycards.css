@@ -1,0 +1,69 @@
+.memoryCards.wrapper {
+    background: #544a7d;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffd452, #544a7d);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffd452, #544a7d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.memoryCards.container {
+    height: 360px;
+    width: 360px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 90px);
+    grid-template-rows: repeat(4, 90px);
+    grid-gap: 5px;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+.front, .back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 3px solid rgb(30, 30, 30);
+    color: rgb(30, 30, 30);
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.back {
+    font-size: 6rem;
+}
+
+.back:hover {
+    color: rgb(50, 50, 50);
+}
+
+.hideCard {
+    opacity: 0;
+}
+
+@media screen and (max-height: 564px) {
+    .memoryCards.container {
+        height: 280px;
+        width: 280px;
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: repeat(4,70px);
+        grid-template-rows: repeat(4, 70px);
+        grid-gap: 5px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .memoryCards.container {
+        height: 240px;
+        width: 240px;
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: repeat(4, 60px);
+        grid-template-rows: repeat(4, 60px);
+        grid-gap: 5px;
+    }
+}

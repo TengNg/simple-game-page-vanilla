@@ -1,0 +1,399 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}   
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* .all-container > div{
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+.all-container {
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+} */
+
+.navbar {
+    background: rgb(30, 30, 30);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+}
+
+
+/* Style items inside container */
+.navbar-logo {
+    text-decoration: none;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: rgb(247, 245, 245);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s ease;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    letter-spacing: 2px;
+}
+
+.navbar-item {
+    height: 80px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-btn {
+    color: rgb(190, 190, 190);
+    border: 3px solid rgb(190, 190, 190);
+    outline: 3px solid transparent;
+    background-color:transparent;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.navbar-btn:hover {
+    outline-offset: -10px;
+    outline-color: white;
+    border-color: white;
+    color: white;
+}
+
+.navbar-link {
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    color: rgb(220, 220, 220);
+    font-weight: bold;
+    font-size: 1.25rem;
+    transition: all 0.5s ease;
+}
+
+.navbar-link:hover {
+    color: white;
+    text-shadow: 2px 4px 4px white;
+    letter-spacing: 3px;
+}
+
+.navbar-logo:hover {
+    text-shadow: 0 0 20px white;
+}
+
+@media screen and (max-width: 1037px) {
+    .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+        position: relative;
+    }
+    .navbar-menu {
+        display: grid;
+        grid-template-rows: repeat(5, auto);
+        width: 100%;
+        top: -1000px;
+        position: absolute;
+        transition: all 0.5s ease;
+        /* z-index: -1; */
+    }
+
+    /* toggled navbar-menu */
+    .navbar-menu.active {
+        background: rgb(30, 30, 30);
+        top: 100%;
+        height: 60vh;
+        transition: all 0.5s ease;
+    }
+
+    .navbar-toggle .bar {
+        width: 30px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease;
+        background: white;
+    }
+
+    .navbar-item { 
+        width: 100%; 
+        height: 50px;
+    }
+
+    .navbar-link {
+        text-align: center;
+        width: 100%;
+        font-size: 1.3rem;
+        display: table;
+    }
+
+    .navbar-logo { padding-left: 50px; }
+
+
+    /* animate toggle button */
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+
+    .navbar-toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2) { opacity: 0; }
+    #mobile-menu.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #mobile-menu.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+
+
+/* description */
+.description {
+    background-color: black; 
+    background: linear-gradient(to right, black, #161616);
+    height: 100vh;
+}
+
+.description-container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.description-heading {
+    margin-top: 220px;
+    font-size: 3.5rem;
+    opacity: 1;
+    background: #3D7EAA;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #FFE47A, #3D7EAA);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #FFE47A, #3D7EAA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.description-heading span, .description-heading {
+    transition: all 0.6s ease;
+}
+
+.description-heading:hover{
+    filter:brightness(1.5);
+    letter-spacing: 2px;
+}
+
+.description-heading:hover span {
+    text-shadow: 0 0 4px #FFE47A;
+}
+
+
+.description-btn {
+    margin: 30px;
+    border: none;
+    background: transparent;
+    color: rgb(173, 173, 173);
+    font-size: 6rem;
+}
+
+.description-btn i {
+    transform: rotate(90deg);
+    transition: all 0.6s ease;
+}
+
+.description-btn:hover i {
+    transform: rotate(270deg);
+    color: white;
+    text-shadow: 0 0 6px white;
+}
+
+@media screen and (max-width: 1100px) {
+    .description-heading {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .description-heading {
+        font-size: 2.3rem;
+    }
+    .description-btn {
+        font-size: 3.5rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    .description-heading {
+        font-size: 2rem;
+    }
+    .description-btn {
+        font-size: 3rem;
+    }
+    .description-btn i {
+        transform: rotate(270deg);
+        color: white;
+    }
+}
+
+
+/* Game div styles */
+.wrapper {
+    height: 100vh;
+    width: 100%;
+}
+
+.wrapper > * {
+    user-select: none;
+}
+
+.heading {
+    text-align: center;
+    padding-top: 80px;
+    margin-bottom: 8px;
+    letter-spacing: 3px;
+    font-size: 3rem;
+    color: rgb(25, 25, 25);
+    user-select: none;
+    transition: all 0.4s ease;
+}
+
+.heading:hover {
+    letter-spacing: 6px;
+}
+
+.d-flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.d-flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
+/* ABOUT PAGE */
+.about-container {
+    height: 80px;
+    background-color: #141414;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    place-items: center;
+}
+
+.about-container > * {
+    color: white;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 2px;
+    user-select: none;
+}
+
+.about-container > .button-div button {
+    font-size: 1rem;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 20px;
+    transition: all 0.4s ease;
+}
+
+.about-heading {
+    font-size: 3rem;
+    color:rgb(190, 190, 190);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.about-heading:hover {
+    color: white;
+    text-shadow: 3px 3px 4px grey;
+}
+
+.about-container > .button-div button:hover {
+    text-shadow: 3px 3px 2px grey;
+}
+
+
+@media screen and (max-width: 768px) {
+    .about-container > .button-div button,
+    .about-container > .paragraph {
+        font-size: 0.6rem;
+    }
+    .about-container > a {
+        font-size: 2rem;
+    }
+}
+
+
+/* Progress bar */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(to right, rgb(92, 92, 92), grey, rgb(226, 226, 226));
+    z-index: 100;
+    transition: all 0.6s ease;
+ }
+
+@media screen and (max-width: 425px) {
+    .heading {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    .description-heading {
+        font-size: 1.1rem;
+    }
+    .about-container > a {
+        font-size: 1.5rem;
+    }
+    .about-container > .button-div button,
+    .about-container > .paragraph {
+        font-size: 0.4rem;
+    }
+}
+
