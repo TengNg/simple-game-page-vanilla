@@ -106,6 +106,7 @@ const restart = () => {
             memoryCardsWinningMessage.textContent = ''
             cards[index].style.pointerEvents = 'all'
             cards[index].setAttribute('name', item.name)
+            cards[index].childNodes[0].childNodes[0].setAttribute('class', item.className)
             faces[index].src = item.imgSrc
         }, 1200)
     })

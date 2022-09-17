@@ -11,6 +11,5 @@ const animateProgressBar = () => {
     // if(width_value >= 100)
     //     progressBar.style.width = 100 + "%";
 
-    console.log(width_value)
 }
 window.addEventListener('scroll', animateProgressBar)
